@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    [
+      {
+        "title": "json",
+        "author": "code"
+      }
+    ]
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "products": [
+    {
+      "id": "1",
+      "description": "turtlee",
+      "model": "123",
+      "price": "40",
+      "stocked": "2"
+    },
+    {
+      "id": "2",
+      "description": "mishu",
+      "model": "2020",
+      "price": "51",
+      "stocked": "1"
+    },
+    {
+      "id": "d6b257c1-fa54-405a-9084-ade89ef7161f",
+      "description": "",
+      "model": "",
+      "price": "",
+      "stocked": ""
+    }
+  ],
+  "clients": [
+    {
+      "name": "Manuel",
+      "lastName": "Sanchez",
+      "email": "manuelsanchezxd@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "mishu",
+      "lastName": "sanchez",
+      "email": "mishu@mishu.com",
+      "id": 2
+    },
+    {
+      "name": "Luigi",
+      "lastName": "Luigi",
+      "email": "luigi@luigi.com",
+      "id": 3
+    },
+    {
+      "name": "",
+      "lastName": "",
+      "email": "",
+      "id": 4
+    }
+  ]
+}

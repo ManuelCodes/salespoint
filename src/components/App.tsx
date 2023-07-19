@@ -1,58 +1,58 @@
 import React from 'react';
+import Navbar from './util/NavBar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import Sales from './sales/Sales';
+import NewSale from './sales/NewSale';
+import ClientList from './clients/ClientList';
+import ProductListContainer from './saleItems/ProducstListContainer';
+import NewClient from './clients/NewClient';
+import NewSaleItem from './saleItems/NewSaleItem';
+import EditSaleItem from './saleItems/EditSaleItem';
+import Home from './home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import EditClient from './clients/EditClient';
 
-function App() {
+
+const App: React.FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">Navbar</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Start
-              </a>
-              <ul className="dropdown-menu dropdown-menu-dark">
-                <li><a className="dropdown-item" href="#">Sales</a></li>
-                <li><a className="dropdown-item" href="#">Clients</a></li>
-                <li><hr className="dropdown-divider"></hr></li>
-                <li><a className="dropdown-item" href="#">Sale Items</a></li>
-                <li><a className="dropdown-item" href="#">Config</a></li>
-              </ul>
-            </li>
-          </ul>
+    <Router>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3" >
+        <div className="container-fluid">
+          <Navbar/>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      <Routes>
+        <Route path='/' element={<Home/>}/> 
+        
+        <Route path='/clients' element={<ClientList/>}/>
+        <Route path='/clients/:message' element={<ClientList/>}/>
+        <Route path='/client/new' element={<NewClient/>}/>
+        <Route path='/client/edit/:id' element={<EditClient/>}/>
+
+        <Route path='/saleitems' element={<ProductListContainer/>}/>
+        <Route path='/saleitems/:message' element={<ProductListContainer/>}/>
+        <Route path='/saleitem/new' element={<NewSaleItem/>}/>
+        <Route path='/saleitem/edit/:id' element={<EditSaleItem/>}/>
+
+        <Route path='/sales' element={<NewSale/>}/>
+        
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
 
 /*
-<nav className="navbar navbar-expand-lg bg-light">
-      <a className="navbar-brand" href="#">Navbar</a>
-      <div className="container-fluid">
-      </div>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+
+
+
+
 */
